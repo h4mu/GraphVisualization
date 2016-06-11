@@ -1,0 +1,1 @@
+﻿<%@ ServiceHost Language="C#" Debug="false" Service="GraphDataService.Query.GraphDataServiceQuery" Factory="GraphDataService.Query.WcfServiceFactory" %>

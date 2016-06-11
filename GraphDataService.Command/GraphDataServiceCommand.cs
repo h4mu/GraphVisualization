@@ -14,7 +14,7 @@ namespace GraphDataService.Command
 {
     public class GraphDataServiceCommand : IGraphDataServiceCommand
     {
-        private const string CleanCypher = "MATCH (v) DETACH DELETE v";
+        private const string CleanCypher = "MATCH (v:Vertex) DETACH DELETE v";
         private const string InitCypher = "CREATE CONSTRAINT ON (vertex:Vertex) ASSERT vertex.id IS UNIQUE";
         private const string PopulateCypher = @"
 UNWIND {vertexes} AS vtx
