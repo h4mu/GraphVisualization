@@ -7,7 +7,7 @@ namespace Common
     {
         private IConfigProvider configProvider;
 
-        internal DbDriverFactory(IConfigProvider configProvider)
+        public DbDriverFactory(IConfigProvider configProvider)
         {
             this.configProvider = configProvider;
         }
@@ -15,8 +15,7 @@ namespace Common
         public IDriver CreateDriver()
         {
             return GraphDatabase.Driver(configProvider.DbConnection,
-                AuthTokens.Basic(configProvider.DbUser, configProvider.DbPass),
-                Config.Builder.WithEncryptionLevel(EncryptionLevel.Encrypted).ToConfig());
+                AuthTokens.Basic(configProvider.DbUser, configProvider.DbPass));
         }
     }
 }

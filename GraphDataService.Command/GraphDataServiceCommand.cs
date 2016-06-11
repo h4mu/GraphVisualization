@@ -40,15 +40,22 @@ MERGE (v)-[:CONNECTED]-(n)
             try
             {
                 using (var session = driver.Session())
-                using (var transaction = session.BeginTransaction())
                 {
                     log.Debug("Cleaning the database...");
-                    transaction.Run(CleanCypher);
+                    session.Run(CleanCypher);
                     log.Debug("Initializing schema...");
-                    transaction.Run(InitCypher);
+                    session.Run(InitCypher);
                     log.Debug("Populating the database...");
-                    transaction.Run(PopulateCypher, new Dictionary<string, object> { { "vertexes", graph.Vertices } });
-                    transaction.Success();
+                    session.Run(PopulateCypher, new Dictionary<string, object>
+                        {
+                            {
+                                "vertexes",
+                                graph.Vertices
+                                    .Select(v => new Dictionary<string, object> {
+                                        { "Id", v.Id }, { "Label", v.Label }, { "AdjacentNodeIds", v.AdjacentNodeIds }
+                                    }).ToList()
+                            }
+                        });
                     log.Debug("Done.");
                 }
             }

@@ -17,7 +17,7 @@ namespace Common
         {
             get
             {
-                return ConfigurationManager.AppSettings["dbUser"];
+                return ConfigurationManager.AppSettings["dbPass"];
             }
         }
 
@@ -25,7 +25,7 @@ namespace Common
         {
             get
             {
-                return ConfigurationManager.AppSettings["dbPass"];
+                return ConfigurationManager.AppSettings["dbUser"];
             }
         }
     }

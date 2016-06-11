@@ -30,20 +30,25 @@ namespace DataLoader
                 if (files.Length > 0)
                 {
                     log.InfoFormat("Found {0} files, proceeding.", files.Length);
+                    var graph = new Graph
+                    {
+                        Vertices = (from file in files
+                                    let xml = XDocument.Load(file).Element("node")
+                                    where xml != null
+                                        && xml.Element("label") != null
+                                        && xml.Element("id") != null
+                                        && xml.Element("adjacentNodes") != null
+                                    select new Vertex
+                                    {
+                                        Label = xml.Element("label").Value,
+                                        Id = int.Parse(xml.Element("id").Value),
+                                        AdjacentNodeIds = (from id in xml.Element("adjacentNodes").Descendants()
+                                                           select int.Parse(id.Value)).ToList()
+                                    }).ToList()
+                    };
                     using (var client = clientFactory.GetGraphDataCommandClient())
                     {
-                        client.RefreshGraph(new Graph
-                        {
-                            Vertices = (from file in files
-                                       let xml = XDocument.Load(file).Element("node")
-                                       select new Vertex
-                                       {
-                                           Label = xml.Element("label").Value,
-                                           Id = int.Parse(xml.Element("id").Value),
-                                           AdjacentNodeIds = (from id in xml.Element("adjacentNodes").Descendants()
-                                                             select int.Parse(id.Value)).ToList()
-                                       }).ToList()
-                        });
+                        client.RefreshGraph(graph);
                         log.Info("Refresh request sent to data server");
                     }
                 }
