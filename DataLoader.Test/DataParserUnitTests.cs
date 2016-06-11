@@ -28,7 +28,7 @@ namespace DataLoader.Test
             loggerFactory.Setup(f => f.GetLogger(It.IsAny<Type>())).Returns(log.Object);
             factory = new Mock<IGraphDataCommandClientFactory>();
             client = new Mock<IGraphDataServiceCommandClient>();
-            factory.Setup(factory => factory.GetGraphDataCommandClient()).Returns(client.Object);
+            factory.Setup(f => f.GetGraphDataCommandClient()).Returns(client.Object);
             filenameProvider = new Mock<IInputFilenameProvider>();
         }
 
@@ -63,7 +63,7 @@ namespace DataLoader.Test
             var sut = new DataParser(loggerFactory.Object, factory.Object, filenameProvider.Object);
             sut.Parse();
 
-            client.Verify(client => client.RefreshGraph(It.IsAny<Graph>()));
+            client.Verify(c => c.RefreshGraph(It.IsAny<Graph>()));
             Assert.IsNotNull(graph);
             var vertices = graph.Vertices.ToArray();
             Assert.AreEqual(1, vertices.Length);
@@ -84,7 +84,7 @@ namespace DataLoader.Test
             var sut = new DataParser(loggerFactory.Object, factory.Object, filenameProvider.Object);
             sut.Parse();
 
-            client.Verify(client => client.RefreshGraph(It.IsAny<Graph>()), Times.Never);
+            client.Verify(c => c.RefreshGraph(It.IsAny<Graph>()), Times.Never);
         }
     }
 }

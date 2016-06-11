@@ -25,7 +25,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GraphDataService.Command.Co
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GraphDataService.Command", "GraphDataService.Command\GraphDataService.Command.csproj", "{158E584D-0C0E-4D2A-8665-7FB3E8C6D218}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GraphDataService.Command.Tests", "GraphDataService.CommandTests\GraphDataService.Command.Tests.csproj", "{6F6AFD7E-4F82-474B-B082-29BA42FB26AD}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GraphDataService.Command.Tests", "GraphDataService.Command.Tests\GraphDataService.Command.Tests.csproj", "{6F6AFD7E-4F82-474B-B082-29BA42FB26AD}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common", "Common\Common.csproj", "{97E482FE-952E-4FE2-9975-5DE4F56E6B5B}"
 EndProject

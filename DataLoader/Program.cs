@@ -11,7 +11,8 @@ namespace DataLoader
             var container = new UnityContainer();
             container.RegisterType<ILoggerFactory, LogManagerFacade>()
                 .RegisterType<IGraphDataCommandClientFactory, GraphDataCommandClientFactory>()
-                .RegisterType<IInputFilenameProvider, InputFilenameProvider>();
+                .RegisterType<IInputFilenameProvider, InputFilenameProvider>()
+                .RegisterInstance<string[]>(args);
             var log = container.Resolve<ILoggerFactory>().GetLogger(typeof(Program));
             log.Info("Program started, resolving parser.");
             var parser = container.Resolve<DataParser>();
