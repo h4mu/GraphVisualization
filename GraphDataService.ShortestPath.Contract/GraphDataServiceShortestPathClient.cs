@@ -9,9 +9,9 @@ namespace GraphDataService.ShortestPath.Contract
 {
     public class GraphDataServiceShortestPathClient : ClientBase<IGraphDataServiceShortestPath>, IGraphDataServiceShortestPathClient
     {
-        public IList<int> GetVertexIdsOnShortestPath(int idFrom, int idTo)
+        public IList<Edge> GetShortestPath(int idFrom, int idTo)
         {
-            return Channel.GetVertexIdsOnShortestPath(idFrom, idTo);
+            return Channel.GetShortestPath(idFrom, idTo);
         }
     }
 }

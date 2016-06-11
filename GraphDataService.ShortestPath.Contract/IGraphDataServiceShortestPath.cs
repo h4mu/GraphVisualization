@@ -11,6 +11,6 @@ namespace GraphDataService.ShortestPath.Contract
     public interface IGraphDataServiceShortestPath
     {
         [OperationContract]
-        IList<int> GetVertexIdsOnShortestPath(int idFrom, int idTo);
+        IList<Edge> GetShortestPath(int idFrom, int idTo);
     }
 }

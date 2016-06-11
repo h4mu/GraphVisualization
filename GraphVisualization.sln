@@ -35,6 +35,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GraphDataService.ShortestPa
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GraphDataService.Query", "GraphDataService.Query\GraphDataService.Query.csproj", "{13F3ABA5-92FE-4D58-AD28-3EC5BB801F1E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GraphDataService.Query.Tests", "GraphDataService.Query.Tests\GraphDataService.Query.Tests.csproj", "{4C156780-2ECE-43DE-B7AE-970E404ADE59}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GraphDataService.ShortestPath", "GraphDataService.ShortestPath\GraphDataService.ShortestPath.csproj", "{A15CA87B-A708-400D-AA8D-B02C5F18C30E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GraphDataService.ShortestPath.Tests", "GraphDataService.ShortestPath.Tests\GraphDataService.ShortestPath.Tests.csproj", "{6CB39E38-0AA9-4990-8F8C-DA927A0D0C9A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -85,6 +91,18 @@ Global
 		{13F3ABA5-92FE-4D58-AD28-3EC5BB801F1E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{13F3ABA5-92FE-4D58-AD28-3EC5BB801F1E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{13F3ABA5-92FE-4D58-AD28-3EC5BB801F1E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4C156780-2ECE-43DE-B7AE-970E404ADE59}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4C156780-2ECE-43DE-B7AE-970E404ADE59}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4C156780-2ECE-43DE-B7AE-970E404ADE59}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4C156780-2ECE-43DE-B7AE-970E404ADE59}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A15CA87B-A708-400D-AA8D-B02C5F18C30E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A15CA87B-A708-400D-AA8D-B02C5F18C30E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A15CA87B-A708-400D-AA8D-B02C5F18C30E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A15CA87B-A708-400D-AA8D-B02C5F18C30E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6CB39E38-0AA9-4990-8F8C-DA927A0D0C9A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6CB39E38-0AA9-4990-8F8C-DA927A0D0C9A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6CB39E38-0AA9-4990-8F8C-DA927A0D0C9A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6CB39E38-0AA9-4990-8F8C-DA927A0D0C9A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -96,6 +114,8 @@ Global
 		{6F6AFD7E-4F82-474B-B082-29BA42FB26AD} = {C2FDD942-33E3-4A7E-BEA9-7E5985C09654}
 		{2AAD2DFA-54EA-4B22-AE2C-5CDBB7C229EA} = {3816AC8C-E4EF-4A67-80B6-3B1F6F7BCD97}
 		{0D9325EB-E8B3-4721-99AB-560516880161} = {3816AC8C-E4EF-4A67-80B6-3B1F6F7BCD97}
+		{4C156780-2ECE-43DE-B7AE-970E404ADE59} = {C2FDD942-33E3-4A7E-BEA9-7E5985C09654}
+		{6CB39E38-0AA9-4990-8F8C-DA927A0D0C9A} = {C2FDD942-33E3-4A7E-BEA9-7E5985C09654}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		EnterpriseLibraryConfigurationToolBinariesPath = packages\Unity.2.1.505.0\lib\NET35

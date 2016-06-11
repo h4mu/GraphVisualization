@@ -20,7 +20,6 @@ namespace GraphDataService.Command.Tests
         Mock<ILog> log;
         Mock<IDriver> driver;
         Mock<ISession> session;
-        Mock<ITransaction> transaction;
 
         [TestInitialize]
         public void SetUpMocks()
@@ -28,9 +27,7 @@ namespace GraphDataService.Command.Tests
             log = new Mock<ILog>();
             loggerFactory = new Mock<ILoggerFactory>();
             loggerFactory.Setup(f => f.GetLogger(It.IsAny<Type>())).Returns(log.Object);
-            transaction = new Mock<ITransaction>();
             session = new Mock<ISession>();
-            session.Setup(s => s.BeginTransaction()).Returns(transaction.Object);
             driver = new Mock<IDriver>();
             driver.Setup(d => d.Session()).Returns(session.Object);
         }
@@ -44,8 +41,7 @@ namespace GraphDataService.Command.Tests
                 Vertices = new List<Vertex> { new Vertex { Id = 0, Label = "a", AdjacentNodeIds = new List<int> { } } }
             });
 
-            transaction.Verify(t => t.Run(It.IsAny<string>(), It.IsAny< Dictionary<string, object>>()), Times.Exactly(3));
-            transaction.Verify(t => t.Success(), Times.Once);
+            session.Verify(t => t.Run(It.IsAny<string>(), It.IsAny< Dictionary<string, object>>()), Times.Exactly(3));
         }
     }
 }
