@@ -1,1 +1,1 @@
-﻿<%@ ServiceHost Language="C#" Debug="false" Service="GraphDataService.ShortestPath.GraphDataServiceShortestPath" Factory="GraphDataService.ShortestPath.WcfServiceFactory" %>
+﻿<%@ ServiceHost Language="C#" Debug="false" Service="GraphBusinessService.ShortestPath.GraphBusinessServiceShortestPath" Factory="GraphBusinessService.ShortestPath.WcfServiceFactory" %>
