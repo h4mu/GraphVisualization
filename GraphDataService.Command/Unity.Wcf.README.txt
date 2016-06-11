@@ -1,0 +1,6 @@
+Getting started with Unity.Wcf
+------------------------------
+
+Find out how to use Unity.Wcf by visiting http://unitywcf.codeplex.com/
+
+Please report all bugs and feature requests on CodePlex.

@@ -6,6 +6,7 @@ using DataLoader;
 using GraphDataService.Command.Contract;
 using System.IO;
 using System.Linq;
+using Common;
 
 namespace DataLoader.Test
 {
@@ -13,6 +14,7 @@ namespace DataLoader.Test
     public class DataParserUnitTests
     {
         private const string FileName = "aaa.xml";
+        Mock<ILoggerFactory> loggerFactory;
         Mock<ILog> log;
         Mock<IGraphDataCommandClientFactory> factory;
         Mock<IGraphDataServiceCommandClient> client;
@@ -22,6 +24,8 @@ namespace DataLoader.Test
         public void SetUpMocks()
         {
             log = new Mock<ILog>();
+            loggerFactory = new Mock<ILoggerFactory>();
+            loggerFactory.Setup(f => f.GetLogger(It.IsAny<Type>())).Returns(log.Object);
             factory = new Mock<IGraphDataCommandClientFactory>();
             client = new Mock<IGraphDataServiceCommandClient>();
             factory.Setup(factory => factory.GetGraphDataCommandClient()).Returns(client.Object);
@@ -42,7 +46,7 @@ namespace DataLoader.Test
         {
             filenameProvider.Setup(provider => provider.GetInputFileNames()).Returns(new string[0]);
 
-            var sut = new DataParser(log.Object, factory.Object, filenameProvider.Object);
+            var sut = new DataParser(loggerFactory.Object, factory.Object, filenameProvider.Object);
             sut.Parse();
 
             client.Verify(c => c.RefreshGraph(It.IsAny<Graph>()), Times.Never);
@@ -56,14 +60,14 @@ namespace DataLoader.Test
             Graph graph = null;
             client.Setup(c => c.RefreshGraph(It.IsAny<Graph>())).Callback<Graph>(g => graph = g);
 
-            var sut = new DataParser(log.Object, factory.Object, filenameProvider.Object);
+            var sut = new DataParser(loggerFactory.Object, factory.Object, filenameProvider.Object);
             sut.Parse();
 
             client.Verify(client => client.RefreshGraph(It.IsAny<Graph>()));
             Assert.IsNotNull(graph);
             var vertices = graph.Vertices.ToArray();
             Assert.AreEqual(1, vertices.Length);
-            Assert.AreEqual("aaa", vertices[0].Name);
+            Assert.AreEqual("aaa", vertices[0].Label);
             Assert.AreEqual(6, vertices[0].Id);
             var ids = vertices[0].AdjacentNodeIds.ToArray();
             Assert.AreEqual(2, ids.Length);
@@ -76,9 +80,8 @@ namespace DataLoader.Test
         public void WhenThereIsAnErrorThrowAnException()
         {
             filenameProvider.Setup(provider => provider.GetInputFileNames()).Returns(new[] { FileName });
-            client.Setup(c => c.RefreshGraph(It.IsAny<Graph>())).Callback<Graph>(g => g.Vertices.ToArray());
 
-            var sut = new DataParser(log.Object, factory.Object, filenameProvider.Object);
+            var sut = new DataParser(loggerFactory.Object, factory.Object, filenameProvider.Object);
             sut.Parse();
 
             client.Verify(client => client.RefreshGraph(It.IsAny<Graph>()), Times.Never);

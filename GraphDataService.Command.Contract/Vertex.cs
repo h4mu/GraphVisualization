@@ -7,10 +7,10 @@ namespace GraphDataService.Command.Contract
     public class Vertex
     {
         [DataMember]
-        public string Name { get; set; }
+        public string Label { get; set; }
         [DataMember]
         public int Id { get; set; }
         [DataMember]
-        public IEnumerable<int> AdjacentNodeIds { get; set; }
+        public IList<int> AdjacentNodeIds { get; set; }
     }
 }

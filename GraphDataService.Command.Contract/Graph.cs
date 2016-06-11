@@ -7,6 +7,6 @@ namespace GraphDataService.Command.Contract
     public class Graph
     {
         [DataMember]
-        public IEnumerable<Vertex> Vertices { get; set; }
+        public IList<Vertex> Vertices { get; set; }
     }
 }

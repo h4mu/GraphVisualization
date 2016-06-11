@@ -1,4 +1,5 @@
-﻿using GraphDataService.Command.Contract;
+﻿using Common;
+using GraphDataService.Command.Contract;
 using log4net;
 using System;
 using System.IO;
@@ -13,9 +14,9 @@ namespace DataLoader
         private readonly IInputFilenameProvider filesProvider;
         private readonly ILog log;
 
-        public DataParser(ILog log, IGraphDataCommandClientFactory clientFactory, IInputFilenameProvider filesProvider)
+        public DataParser(ILoggerFactory loggerFactory, IGraphDataCommandClientFactory clientFactory, IInputFilenameProvider filesProvider)
         {
-            this.log = log;
+            log = loggerFactory.GetLogger(GetType());
             this.clientFactory = clientFactory;
             this.filesProvider = filesProvider;
         }
@@ -33,15 +34,15 @@ namespace DataLoader
                     {
                         client.RefreshGraph(new Graph
                         {
-                            Vertices = from file in files
+                            Vertices = (from file in files
                                        let xml = XDocument.Load(file).Element("node")
                                        select new Vertex
                                        {
-                                           Name = xml.Element("label").Value,
+                                           Label = xml.Element("label").Value,
                                            Id = int.Parse(xml.Element("id").Value),
-                                           AdjacentNodeIds = from id in xml.Element("adjacentNodes").Descendants()
-                                                             select int.Parse(id.Value)
-                                       }
+                                           AdjacentNodeIds = (from id in xml.Element("adjacentNodes").Descendants()
+                                                             select int.Parse(id.Value)).ToList()
+                                       }).ToList()
                         });
                         log.Info("Refresh request sent to data server");
                     }

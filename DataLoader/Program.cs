@@ -1,4 +1,4 @@
-﻿using log4net;
+﻿using Common;
 using Microsoft.Practices.Unity;
 
 namespace DataLoader
@@ -8,7 +8,7 @@ namespace DataLoader
         static void Main(string[] args)
         {
             var container = new UnityContainer();
-            container.RegisterType<ILog>(new InjectionFactory(c => LogManager.GetLogger(typeof(Program))))
+            container.RegisterType<ILoggerFactory, LogManagerFacade>()
                 .RegisterType<IGraphDataCommandClientFactory, GraphDataCommandClientFactory>()
                 .RegisterType<IInputFilenameProvider, InputFilenameProvider>();
             var parser = container.Resolve<DataParser>();

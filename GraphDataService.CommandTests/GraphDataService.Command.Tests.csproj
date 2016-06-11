@@ -3,11 +3,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{2473730B-1C9C-4A2A-8E1F-56E7611ED833}</ProjectGuid>
+    <ProjectGuid>{6F6AFD7E-4F82-474B-B082-29BA42FB26AD}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>DataLoader.Test</RootNamespace>
-    <AssemblyName>DataLoader.Test</AssemblyName>
+    <RootNamespace>GraphDataService.CommandTests</RootNamespace>
+    <AssemblyName>GraphDataService.CommandTests</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -16,6 +16,7 @@
     <ReferencePath>$(ProgramFiles)\Common Files\microsoft shared\VSTT\$(VisualStudioVersion)\UITestExtensionPackages</ReferencePath>
     <IsCodedUITest>False</IsCodedUITest>
     <TestProjectType>UnitTest</TestProjectType>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -47,6 +48,18 @@
       <HintPath>..\packages\Moq.4.5.9\lib\net45\Moq.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Neo4j.Driver, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Neo4j.Driver.1.0.1\lib\dotnet\Neo4j.Driver.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Sockets.Plugin, Version=1.3.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\rda.SocketsForPCL.1.2.2\lib\net45\Sockets.Plugin.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Sockets.Plugin.Abstractions, Version=1.3.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\rda.SocketsForPCL.1.2.2\lib\net45\Sockets.Plugin.Abstractions.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
   </ItemGroup>
   <Choose>
@@ -62,7 +75,7 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
-    <Compile Include="DataParserUnitTests.cs" />
+    <Compile Include="GraphDataServiceCommandTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -70,13 +83,13 @@
       <Project>{97E482FE-952E-4FE2-9975-5DE4F56E6B5B}</Project>
       <Name>Common</Name>
     </ProjectReference>
-    <ProjectReference Include="..\DataLoader\DataLoader.csproj">
-      <Project>{d773d9a0-5791-4d43-bb7f-ff406b00cb0a}</Project>
-      <Name>DataLoader</Name>
-    </ProjectReference>
     <ProjectReference Include="..\GraphDataService.Command.Contract\GraphDataService.Command.Contract.csproj">
-      <Project>{7210ac12-e23e-45a0-8320-91562c489bd9}</Project>
+      <Project>{7210AC12-E23E-45A0-8320-91562C489BD9}</Project>
       <Name>GraphDataService.Command.Contract</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GraphDataService.Command\GraphDataService.Command.csproj">
+      <Project>{158E584D-0C0E-4D2A-8665-7FB3E8C6D218}</Project>
+      <Name>GraphDataService.Command</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
