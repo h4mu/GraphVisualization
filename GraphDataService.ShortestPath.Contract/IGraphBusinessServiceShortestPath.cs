@@ -5,10 +5,10 @@ using System.ServiceModel;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace GraphDataService.ShortestPath.Contract
+namespace GraphBusinessService.ShortestPath.Contract
 {
-    [ServiceContract(Namespace = "https://github.com/h4mu/GraphVisualization/GraphDataService.ShortestPath.Contract")]
-    public interface IGraphDataServiceShortestPath
+    [ServiceContract(Namespace = "https://github.com/h4mu/GraphVisualization/GraphBusinessService.ShortestPath.Contract")]
+    public interface IGraphBusinessServiceShortestPath
     {
         [OperationContract]
         IList<Edge> GetShortestPath(int idFrom, int idTo);

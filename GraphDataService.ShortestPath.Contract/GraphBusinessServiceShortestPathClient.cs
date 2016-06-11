@@ -5,9 +5,9 @@ using System.ServiceModel;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace GraphDataService.ShortestPath.Contract
+namespace GraphBusinessService.ShortestPath.Contract
 {
-    public class GraphDataServiceShortestPathClient : ClientBase<IGraphDataServiceShortestPath>, IGraphDataServiceShortestPathClient
+    public class GraphDataServiceShortestPathClient : ClientBase<IGraphBusinessServiceShortestPath>, IGraphBusinessServiceShortestPathClient
     {
         public IList<Edge> GetShortestPath(int idFrom, int idTo)
         {

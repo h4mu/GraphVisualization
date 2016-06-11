@@ -1,9 +1,10 @@
 using Common;
-using GraphDataService.ShortestPath.Contract;
+using GraphBusinessService.ShortestPath.Contract;
+using GraphDataService.Query.Contract;
 using Microsoft.Practices.Unity;
 using Unity.Wcf;
 
-namespace GraphDataService.ShortestPath
+namespace GraphBusinessService.ShortestPath
 {
 	public class WcfServiceFactory : UnityServiceHostFactory
     {
@@ -11,7 +12,7 @@ namespace GraphDataService.ShortestPath
         {
             container.RegisterType<ILoggerFactory, LogManagerFacade>()
                 .RegisterType<IGraphDataServiceQueryClientFactory, GraphDataServiceQueryClientFactory>()
-                .RegisterType<IGraphDataServiceShortestPath, GraphDataServiceShortestPath>();
+                .RegisterType<IGraphBusinessServiceShortestPath, GraphBusinessServiceShortestPath>();
         }
     }    
 }

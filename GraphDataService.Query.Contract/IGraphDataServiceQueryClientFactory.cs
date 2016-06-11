@@ -1,6 +1,4 @@
-﻿using GraphDataService.Query.Contract;
-
-namespace GraphDataService.ShortestPath
+﻿namespace GraphDataService.Query.Contract
 {
     public interface IGraphDataServiceQueryClientFactory
     {

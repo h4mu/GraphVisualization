@@ -1,6 +1,6 @@
 ﻿using System.Runtime.Serialization;
 
-namespace GraphDataService.ShortestPath.Contract
+namespace GraphBusinessService.ShortestPath.Contract
 {
     [DataContract]
     public class Edge

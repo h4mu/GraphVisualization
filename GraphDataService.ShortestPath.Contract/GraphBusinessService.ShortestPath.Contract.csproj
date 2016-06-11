@@ -7,8 +7,8 @@
     <ProjectGuid>{0D9325EB-E8B3-4721-99AB-560516880161}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>GraphDataService.ShortestPath.Contract</RootNamespace>
-    <AssemblyName>GraphDataService.ShortestPath.Contract</AssemblyName>
+    <RootNamespace>GraphBusinessService.ShortestPath.Contract</RootNamespace>
+    <AssemblyName>GraphBusinessService.ShortestPath.Contract</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -43,9 +43,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Edge.cs" />
-    <Compile Include="GraphDataServiceShortestPathClient.cs" />
-    <Compile Include="IGraphDataServiceShortestPath.cs" />
-    <Compile Include="IGraphDataServiceShortestPathClient.cs" />
+    <Compile Include="GraphBusinessServiceShortestPathClient.cs" />
+    <Compile Include="GraphBusinessServiceShortestPathClientFactory.cs" />
+    <Compile Include="IGraphBusinessServiceShortestPath.cs" />
+    <Compile Include="IGraphBusinessServiceShortestPathClient.cs" />
+    <Compile Include="IGraphBusinessServiceShortestPathClientFactory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

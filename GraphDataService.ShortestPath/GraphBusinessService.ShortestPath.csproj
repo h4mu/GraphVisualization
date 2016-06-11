@@ -98,16 +98,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="GraphDataServiceShortestPath.svc" />
+    <Content Include="GraphBusinessServiceShortestPath.svc" />
     <Content Include="Unity.Wcf.README.txt" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="GraphDataServiceQueryClientFactory.cs" />
-    <Compile Include="GraphDataServiceShortestPath.cs" />
-    <Compile Include="GraphDataServiceShortestPathClientFactory.cs" />
-    <Compile Include="IGraphDataServiceQueryClientFactory.cs" />
-    <Compile Include="IGraphDataServiceShortestPathClientFactory.cs" />
+    <Compile Include="GraphBusinessServiceShortestPath.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="WcfServiceFactory.cs" />
   </ItemGroup>
@@ -132,9 +128,9 @@
       <Project>{2AAD2DFA-54EA-4B22-AE2C-5CDBB7C229EA}</Project>
       <Name>GraphDataService.Query.Contract</Name>
     </ProjectReference>
-    <ProjectReference Include="..\GraphDataService.ShortestPath.Contract\GraphDataService.ShortestPath.Contract.csproj">
+    <ProjectReference Include="..\GraphDataService.ShortestPath.Contract\GraphBusinessService.ShortestPath.Contract.csproj">
       <Project>{0D9325EB-E8B3-4721-99AB-560516880161}</Project>
-      <Name>GraphDataService.ShortestPath.Contract</Name>
+      <Name>GraphBusinessService.ShortestPath.Contract</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

@@ -1,5 +1,5 @@
 ﻿using Common;
-using GraphDataService.ShortestPath.Contract;
+using GraphBusinessService.ShortestPath.Contract;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,16 +10,17 @@ using System.Text;
 using log4net;
 using QuickGraph;
 using QuickGraph.Algorithms;
-using Edge = GraphDataService.ShortestPath.Contract.Edge;
+using Edge = GraphBusinessService.ShortestPath.Contract.Edge;
+using GraphDataService.Query.Contract;
 
-namespace GraphDataService.ShortestPath
+namespace GraphBusinessService.ShortestPath
 {
-    public class GraphDataServiceShortestPath : IGraphDataServiceShortestPath
+    public class GraphBusinessServiceShortestPath : IGraphBusinessServiceShortestPath
     {
         private IGraphDataServiceQueryClientFactory clientFactory;
         private ILog log;
 
-        public GraphDataServiceShortestPath(ILoggerFactory loggerFactory, IGraphDataServiceQueryClientFactory clientFactory)
+        public GraphBusinessServiceShortestPath(ILoggerFactory loggerFactory, IGraphDataServiceQueryClientFactory clientFactory)
         {
             log = loggerFactory.GetLogger(GetType());
             this.clientFactory = clientFactory;

@@ -63,7 +63,7 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
-    <Compile Include="GraphDataServiceShortestPathTests.cs" />
+    <Compile Include="GraphBusinessServiceShortestPathTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -75,13 +75,13 @@
       <Project>{2AAD2DFA-54EA-4B22-AE2C-5CDBB7C229EA}</Project>
       <Name>GraphDataService.Query.Contract</Name>
     </ProjectReference>
-    <ProjectReference Include="..\GraphDataService.ShortestPath.Contract\GraphDataService.ShortestPath.Contract.csproj">
+    <ProjectReference Include="..\GraphDataService.ShortestPath.Contract\GraphBusinessService.ShortestPath.Contract.csproj">
       <Project>{0D9325EB-E8B3-4721-99AB-560516880161}</Project>
-      <Name>GraphDataService.ShortestPath.Contract</Name>
+      <Name>GraphBusinessService.ShortestPath.Contract</Name>
     </ProjectReference>
-    <ProjectReference Include="..\GraphDataService.ShortestPath\GraphDataService.ShortestPath.csproj">
+    <ProjectReference Include="..\GraphDataService.ShortestPath\GraphBusinessService.ShortestPath.csproj">
       <Project>{A15CA87B-A708-400D-AA8D-B02C5F18C30E}</Project>
-      <Name>GraphDataService.ShortestPath</Name>
+      <Name>GraphBusinessService.ShortestPath</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

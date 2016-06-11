@@ -45,8 +45,10 @@
     <Compile Include="Edge.cs" />
     <Compile Include="Graph.cs" />
     <Compile Include="GraphDataServiceQueryClient.cs" />
+    <Compile Include="GraphDataServiceQueryClientFactory.cs" />
     <Compile Include="IGraphDataServiceQuery.cs" />
     <Compile Include="IGraphDataServiceQueryClient.cs" />
+    <Compile Include="IGraphDataServiceQueryClientFactory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Vertex.cs" />
   </ItemGroup>
