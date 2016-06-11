@@ -31,15 +31,15 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common", "Common\Common.csp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GraphDataService.Query.Contract", "GraphDataService.Query.Contract\GraphDataService.Query.Contract.csproj", "{2AAD2DFA-54EA-4B22-AE2C-5CDBB7C229EA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GraphBusinessService.ShortestPath.Contract", "GraphDataService.ShortestPath.Contract\GraphBusinessService.ShortestPath.Contract.csproj", "{0D9325EB-E8B3-4721-99AB-560516880161}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GraphBusinessService.ShortestPath.Contract", "GraphBusinessService.ShortestPath.Contract\GraphBusinessService.ShortestPath.Contract.csproj", "{0D9325EB-E8B3-4721-99AB-560516880161}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GraphDataService.Query", "GraphDataService.Query\GraphDataService.Query.csproj", "{13F3ABA5-92FE-4D58-AD28-3EC5BB801F1E}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GraphDataService.Query.Tests", "GraphDataService.Query.Tests\GraphDataService.Query.Tests.csproj", "{4C156780-2ECE-43DE-B7AE-970E404ADE59}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GraphBusinessService.ShortestPath", "GraphDataService.ShortestPath\GraphBusinessService.ShortestPath.csproj", "{A15CA87B-A708-400D-AA8D-B02C5F18C30E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GraphBusinessService.ShortestPath", "GraphBusinessService.ShortestPath\GraphBusinessService.ShortestPath.csproj", "{A15CA87B-A708-400D-AA8D-B02C5F18C30E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GraphBusinessService.ShortestPath.Tests", "GraphDataService.ShortestPath.Tests\GraphBusinessService.ShortestPath.Tests.csproj", "{6CB39E38-0AA9-4990-8F8C-DA927A0D0C9A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GraphBusinessService.ShortestPath.Tests", "GraphBusinessService.ShortestPath.Tests\GraphBusinessService.ShortestPath.Tests.csproj", "{6CB39E38-0AA9-4990-8F8C-DA927A0D0C9A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
