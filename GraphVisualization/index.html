@@ -11,16 +11,17 @@
         #network {
             width: 1100px;
             height: 700px;
+            overflow: auto;
         }
     </style>
 </head>
 <body>
     <h1>Graph Visualization</h1>
     <div id="network"></div>
-    <input type="button" name="getshortestpath" disabled value="Get shortest path" />
+    <input id="shortestPathButton" type="button" name="getshortestpath" disabled value="Get shortest path" />
     <script type="text/javascript">
         $(document).ready(function () {
-            $.getJSON('api/graph')
+            $.getJSON("api/graph")
                 .done(function (graph) {
                     var data = {
                         nodes: new vis.DataSet(graph.nodes),
@@ -36,8 +37,22 @@
                             zoomView: true
                         }
                     };
-                    var network = new vis.Network($('#network').get(0), data, options);
+                    var network = new vis.Network($("#network").get(0), data, options);
+                    network.on("click", function (data) {
+                        $("#shortestPathButton").prop("disabled", data.nodes.length != 2);
+                    })
+                    $("#network").data("vis", network).data("data", data);
                 });
+            $("#shortestPathButton").click(function () {
+                var nodes = $("#network").data("vis").getSelectedNodes();
+                $.getJSON("api/graph/" + nodes[0] + "/" + nodes[1])
+                    .done(function (edges) {
+                        for (var i = 0; i < edges.length; i++) {
+                            edges[i].color = "yellow";
+                        }
+                        $("#network").data("data").edges.update(edges);
+                    });
+            });
         });
     </script>
 </body>
