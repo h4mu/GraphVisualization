@@ -17,7 +17,7 @@
 </head>
 <body>
     <h1>Graph Visualization</h1>
-    <div id="network"></div>
+    <div id="network" title="Hold Ctrl when clicking to select multiple nodes"></div>
     <input id="shortestPathButton" type="button" name="getshortestpath" disabled value="Get shortest path" />
     <script type="text/javascript">
         $(document).ready(function () {
@@ -46,11 +46,13 @@
             $("#shortestPathButton").click(function () {
                 var nodes = $("#network").data("vis").getSelectedNodes();
                 $.getJSON("api/graph/" + nodes[0] + "/" + nodes[1])
-                    .done(function (edges) {
-                        for (var i = 0; i < edges.length; i++) {
-                            edges[i].color = "yellow";
+                    .done(function (path) {
+                        var edges = $("#network").data("data").edges;
+                        var allEdges = edges.get();
+                        for (var i = 0; i < allEdges.length; i++) {
+                            allEdges[i].color = path[allEdges[i].id] ? "red" : null;
                         }
-                        $("#network").data("data").edges.update(edges);
+                        edges.update(allEdges);
                     });
             });
         });

@@ -9,22 +9,27 @@ using System.Net.Http;
 using System.Web.Http;
 using Graph = GraphVisualization.Models.Graph;
 using Edge = GraphVisualization.Models.Edge;
+using Common;
+using log4net;
 
 namespace GraphVisualization.Controllers
 {
     public class GraphController : ApiController
     {
+        private ILog log;
         private IGraphBusinessServiceShortestPathClientFactory businessClientFactory;
         private IGraphDataServiceQueryClientFactory queryClientFactory;
 
-        public GraphController(IGraphDataServiceQueryClientFactory queryClientFactory, IGraphBusinessServiceShortestPathClientFactory businessClientFactory)
+        public GraphController(ILoggerFactory loggerFactory, IGraphDataServiceQueryClientFactory queryClientFactory, IGraphBusinessServiceShortestPathClientFactory businessClientFactory)
         {
+            log = loggerFactory.GetLogger(GetType());
             this.queryClientFactory = queryClientFactory;
             this.businessClientFactory = businessClientFactory;
         }
 
         public Graph GetGraph()
         {
+            log.Info("Serving graph request");
             using (var client = queryClientFactory.CreateClient())
             {
                 var queryGraph = client.GetGraph();
@@ -35,6 +40,9 @@ namespace GraphVisualization.Controllers
                     Edges = queryGraph.Edges
                         .Select(e => new Edge
                         {
+                            Id = string.Format("{0}-{1}",
+                                Math.Min(e.Vertex1, e.Vertex2),
+                                Math.Max(e.Vertex1, e.Vertex2)),
                             From = Math.Min(e.Vertex1, e.Vertex2),
                             To = Math.Max(e.Vertex1, e.Vertex2)
                         })
@@ -43,15 +51,16 @@ namespace GraphVisualization.Controllers
             }
         }
 
-        public IEnumerable<Edge> GetShortestPath(int idFrom, int idTo)
+        public IDictionary<string, bool> GetShortestPath(int idFrom, int idTo)
         {
+            log.Info("Serving shortest path request");
             using (var client = businessClientFactory.CreateClient())
             {
-                return client.GetShortestPath(idFrom, idTo).Select(e => new Edge
-                {
-                    From = Math.Min(e.Vertex1, e.Vertex2),
-                    To = Math.Max(e.Vertex1, e.Vertex2)
-                }).Distinct();
+                return client.GetShortestPath(idFrom, idTo).ToDictionary(
+                    e => string.Format("{0}-{1}",
+                        Math.Min(e.Vertex1, e.Vertex2),
+                        Math.Max(e.Vertex1, e.Vertex2)),
+                    e => true);
             }
         }
     }

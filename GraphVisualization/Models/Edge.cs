@@ -4,6 +4,7 @@ namespace GraphVisualization.Models
 {
     public class Edge : IEquatable<Edge>
     {
+        public string Id { get; set; }
         public int From { get; set; }
         public int To { get; set; }
 
