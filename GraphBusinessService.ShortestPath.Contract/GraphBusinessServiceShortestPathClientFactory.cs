@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace GraphBusinessService.ShortestPath.Contract
+﻿namespace GraphBusinessService.ShortestPath.Contract
 {
     public class GraphBusinessServiceShortestPathClientFactory : IGraphBusinessServiceShortestPathClientFactory
     {

@@ -2,7 +2,6 @@ using Common;
 using GraphBusinessService.ShortestPath.Contract;
 using GraphDataService.Query.Contract;
 using Microsoft.Practices.Unity;
-using System.Collections.Generic;
 using System.Web.Http;
 using Unity.WebApi;
 

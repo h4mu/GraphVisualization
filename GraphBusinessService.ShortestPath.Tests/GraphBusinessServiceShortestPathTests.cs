@@ -1,14 +1,9 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using GraphBusinessService.ShortestPath;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Moq;
 using Common;
 using log4net;
-using GraphBusinessService.ShortestPath.Contract;
 using GraphDataService.Query.Contract;
 
 namespace GraphBusinessService.ShortestPath.Tests
@@ -35,11 +30,11 @@ namespace GraphBusinessService.ShortestPath.Tests
         [TestMethod]
         public void WhenQueryingForShortestPathBetweenTheSameVertexReturnAnEmptyResult()
         {
-            client.Setup(c => c.GetEdges()).Returns(new List<GraphDataService.Query.Contract.Edge>
+            client.Setup(c => c.GetEdges()).Returns(new List<Edge>
             {
-                new GraphDataService.Query.Contract.Edge { Vertex1 = 1, Vertex2 = 2 },
-                new GraphDataService.Query.Contract.Edge { Vertex1 = 1, Vertex2 = 1 },
-                new GraphDataService.Query.Contract.Edge { Vertex1 = 2, Vertex2 = 1 }
+                new Edge { Vertex1 = 1, Vertex2 = 2 },
+                new Edge { Vertex1 = 1, Vertex2 = 1 },
+                new Edge { Vertex1 = 2, Vertex2 = 1 }
             });
 
             var sut = new GraphBusinessServiceShortestPath(loggerFactory.Object, clientFactory.Object);
@@ -51,11 +46,11 @@ namespace GraphBusinessService.ShortestPath.Tests
         [TestMethod]
         public void WhenQueryingForShortestPathBetweenTwoEndsOfAPathReturnThePath()
         {
-            client.Setup(c => c.GetEdges()).Returns(new List<GraphDataService.Query.Contract.Edge>
+            client.Setup(c => c.GetEdges()).Returns(new List<Edge>
             {
-                new GraphDataService.Query.Contract.Edge { Vertex1 = 1, Vertex2 = 2 },
-                new GraphDataService.Query.Contract.Edge { Vertex1 = 2, Vertex2 = 3 },
-                new GraphDataService.Query.Contract.Edge { Vertex1 = 3, Vertex2 = 4 }
+                new Edge { Vertex1 = 1, Vertex2 = 2 },
+                new Edge { Vertex1 = 2, Vertex2 = 3 },
+                new Edge { Vertex1 = 3, Vertex2 = 4 }
             });
 
             var sut = new GraphBusinessServiceShortestPath(loggerFactory.Object, clientFactory.Object);
@@ -67,14 +62,14 @@ namespace GraphBusinessService.ShortestPath.Tests
         [TestMethod]
         public void WhenQueryingForShortestPathBetweenTwoOfThreeInterconnectedVerticesReturnTheEdgeBetweenThem()
         {
-            client.Setup(c => c.GetEdges()).Returns(new List<GraphDataService.Query.Contract.Edge>
+            client.Setup(c => c.GetEdges()).Returns(new List<Edge>
             {
-                new GraphDataService.Query.Contract.Edge { Vertex1 = 1, Vertex2 = 2 },
-                new GraphDataService.Query.Contract.Edge { Vertex1 = 2, Vertex2 = 1 },
-                new GraphDataService.Query.Contract.Edge { Vertex1 = 2, Vertex2 = 3 },
-                new GraphDataService.Query.Contract.Edge { Vertex1 = 3, Vertex2 = 2 },
-                new GraphDataService.Query.Contract.Edge { Vertex1 = 3, Vertex2 = 1 },
-                new GraphDataService.Query.Contract.Edge { Vertex1 = 1, Vertex2 = 3 }
+                new Edge { Vertex1 = 1, Vertex2 = 2 },
+                new Edge { Vertex1 = 2, Vertex2 = 1 },
+                new Edge { Vertex1 = 2, Vertex2 = 3 },
+                new Edge { Vertex1 = 3, Vertex2 = 2 },
+                new Edge { Vertex1 = 3, Vertex2 = 1 },
+                new Edge { Vertex1 = 1, Vertex2 = 3 }
             });
 
             var sut = new GraphBusinessServiceShortestPath(loggerFactory.Object, clientFactory.Object);

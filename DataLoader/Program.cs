@@ -1,6 +1,5 @@
 ﻿using Common;
 using Microsoft.Practices.Unity;
-using System;
 
 namespace DataLoader
 {

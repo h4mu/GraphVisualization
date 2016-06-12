@@ -2,7 +2,6 @@
 using GraphDataService.Command.Contract;
 using log4net;
 using System;
-using System.IO;
 using System.Linq;
 using System.Xml.Linq;
 

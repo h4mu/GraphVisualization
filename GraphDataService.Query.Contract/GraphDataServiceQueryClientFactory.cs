@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace GraphDataService.Query.Contract
+﻿namespace GraphDataService.Query.Contract
 {
     public class GraphDataServiceQueryClientFactory : IGraphDataServiceQueryClientFactory
     {
