@@ -7,7 +7,7 @@ namespace DataLoader
     {
         private string directory;
 
-        internal InputFilenameProvider(string[] args)
+        public InputFilenameProvider(string[] args)
         {
             if (args.Length > 0 && Directory.Exists(args[0]))
             {

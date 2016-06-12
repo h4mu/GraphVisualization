@@ -16,4 +16,4 @@ Build the solution either from VS or using MSBuild.
 
 ## Deployment
 
-Copy each service's dll and config files to a folder. Map it to a virtual directory in IIS and enable asp.net for it. Update the config files as necessary. The data services use Neo4j which has a free open source community edition. Its installer can be downloaded from neo4j.com.
+Copy each service's dll and config files to a folder. Map it to a virtual directory in IIS and enable asp.net for it. Update the config files as necessary. The data services use Neo4j which has a free open source community edition. Its installer can be downloaded from neo4j.com, see http://neo4j.com/docs/operations-manual/current/ for documentation.

@@ -3,10 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25123.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GraphVisualization", "GraphVisualization\GraphVisualization.csproj", "{9B06EC60-A357-4C5D-A881-02A550153806}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GraphVisualization.Tests", "GraphVisualization.Tests\GraphVisualization.Tests.csproj", "{B2257279-8E03-47BD-96E0-17D808550303}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{C2FDD942-33E3-4A7E-BEA9-7E5985C09654}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Contracts", "Contracts", "{3816AC8C-E4EF-4A67-80B6-3B1F6F7BCD97}"
@@ -47,14 +43,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{9B06EC60-A357-4C5D-A881-02A550153806}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{9B06EC60-A357-4C5D-A881-02A550153806}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{9B06EC60-A357-4C5D-A881-02A550153806}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{9B06EC60-A357-4C5D-A881-02A550153806}.Release|Any CPU.Build.0 = Release|Any CPU
-		{B2257279-8E03-47BD-96E0-17D808550303}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{B2257279-8E03-47BD-96E0-17D808550303}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{B2257279-8E03-47BD-96E0-17D808550303}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{B2257279-8E03-47BD-96E0-17D808550303}.Release|Any CPU.Build.0 = Release|Any CPU
 		{D773D9A0-5791-4D43-BB7F-FF406B00CB0A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{D773D9A0-5791-4D43-BB7F-FF406B00CB0A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D773D9A0-5791-4D43-BB7F-FF406B00CB0A}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -108,7 +96,6 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{B2257279-8E03-47BD-96E0-17D808550303} = {C2FDD942-33E3-4A7E-BEA9-7E5985C09654}
 		{2473730B-1C9C-4A2A-8E1F-56E7611ED833} = {C2FDD942-33E3-4A7E-BEA9-7E5985C09654}
 		{7210AC12-E23E-45A0-8320-91562C489BD9} = {3816AC8C-E4EF-4A67-80B6-3B1F6F7BCD97}
 		{6F6AFD7E-4F82-474B-B082-29BA42FB26AD} = {C2FDD942-33E3-4A7E-BEA9-7E5985C09654}
