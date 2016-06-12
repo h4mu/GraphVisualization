@@ -1,9 +1,8 @@
 ﻿using System;
-using GraphBusinessService.ShortestPath.Contract;
 
-namespace GraphBusinessService.ShortestPath
+namespace GraphBusinessService.ShortestPath.Contract
 {
-    internal class GraphBusinessServiceShortestPathClientFactory : IGraphBusinessServiceShortestPathClientFactory
+    public class GraphBusinessServiceShortestPathClientFactory : IGraphBusinessServiceShortestPathClientFactory
     {
         public IGraphBusinessServiceShortestPathClient CreateClient()
         {

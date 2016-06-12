@@ -37,6 +37,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GraphBusinessService.Shorte
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GraphBusinessService.ShortestPath.Tests", "GraphBusinessService.ShortestPath.Tests\GraphBusinessService.ShortestPath.Tests.csproj", "{6CB39E38-0AA9-4990-8F8C-DA927A0D0C9A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GraphVisualization", "GraphVisualization\GraphVisualization.csproj", "{ED6776A9-E5A9-4F44-82DC-EB070185727A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -91,6 +93,10 @@ Global
 		{6CB39E38-0AA9-4990-8F8C-DA927A0D0C9A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6CB39E38-0AA9-4990-8F8C-DA927A0D0C9A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6CB39E38-0AA9-4990-8F8C-DA927A0D0C9A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ED6776A9-E5A9-4F44-82DC-EB070185727A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ED6776A9-E5A9-4F44-82DC-EB070185727A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ED6776A9-E5A9-4F44-82DC-EB070185727A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ED6776A9-E5A9-4F44-82DC-EB070185727A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

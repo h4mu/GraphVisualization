@@ -1,6 +1,4 @@
-﻿using GraphBusinessService.ShortestPath.Contract;
-
-namespace GraphBusinessService.ShortestPath
+﻿namespace GraphBusinessService.ShortestPath.Contract
 {
     public interface IGraphBusinessServiceShortestPathClientFactory
     {
