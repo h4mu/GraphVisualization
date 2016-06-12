@@ -16,4 +16,8 @@ Build the solution either from VS or using MSBuild.
 
 ## Deployment
 
-Copy each service's dll and config files to a folder. Map it to a virtual directory in IIS and enable asp.net for it. Update the config files as necessary. The data services use Neo4j which has a free open source community edition. Its installer can be downloaded from neo4j.com, see http://neo4j.com/docs/operations-manual/current/ for documentation.
+Tested with IIS Express, running the GraphVisualization project from VS will start all services as well.
+
+For production-like  environments running from IIS is recommended. Copy each service's dll and config files to a folder. Map it to a virtual directory in IIS and enable asp.net for it. Update the App.config and Web.config files as necessary (database url, username, password, service endpoints, logging, etc.).
+
+ The data services use Neo4j which has a free open source community edition. Its installer can be downloaded from neo4j.com, see http://neo4j.com/docs/operations-manual/current/ for documentation.
