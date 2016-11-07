@@ -1,3 +1,4 @@
+[![Build status](https://ci.appveyor.com/api/projects/status/9k8t6whmoa7sql29?svg=true)](https://ci.appveyor.com/project/h4mu/graphvisualization)
 # GraphVisualization
 
 The Loader application parses XML files in the folder given as its first argument or where it is executed in to populate a graph in the database. See the relevant unit tests for the xml structure required.
